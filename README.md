@@ -2,12 +2,16 @@
 --------
 >This is used to learn docker in http://www.runoob.com
 ##Docker
+
 ###简介：
+
  - 基于Go 语言
  - 沙箱机制
  - 应用容器引擎
  - Apache2.0协议开源
+ 
 ###用途：
+
  - 打包应用以及依赖包到一个轻量的、可移植的容器当中，以发布到任何机器上
  - 实现虚拟化
  

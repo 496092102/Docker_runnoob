@@ -74,7 +74,7 @@ docker search httpd
 本地镜像与仓库中镜像进行链接
 ```
 docker tag image:tag ip:port/harbor-project-name/image:tag
-docker tag 10.217.248.21/library/nginx:latest 10.217.248.21/test1/nginx:latest
+docker tag nginx:latest 10.217.248.21/test1/nginx:latest
 ```
 推送本地镜像至仓库
 ```
@@ -100,45 +100,49 @@ Dockerfile 文件：
 
 docker build构建镜像
 ```
-docker build -t(tag) runoob/centos:6.7 .
+docker build -t(tag) image:tag $DOCKFILE_DIR
 ```
 docker tag 命令，为镜像添加一个新的标签
 ```
-docker tag 860c279d2fec runoob/centos:dev
+docker tag IMAGE_ID image:tag
 ```
 Dockerfile
 ```
 cat Dockerfile
 FROM    centos:6.7
-MAINTAINER      Fisher "fisher@sudops.com"
+MAINTAINER      name "email"
 RUN     /bin/echo 'root:123456' |chpasswd
-RUN     useradd runoob
-RUN     /bin/echo 'runoob:123456' |chpasswd
+RUN     useradd test1
+RUN     /bin/echo 'test1:123456' |chpasswd
 RUN     /bin/echo -e "LANG=\"en_US.UTF-8\"" >/etc/default/local
-EXPOSE  22
-EXPOSE  80
-CMD     /usr/sbin/sshd -D
+CMD     /bin/bash -c "while true; do echo hello world; sleep 3; done"
 ```
 ### Docker容器使用
- - docker run 命令来在容器内运行一个应用程序
+
+docker run 命令来在容器内运行一个应用程序
 ```
-docker run *image:tag* *command*
+docker run image:tag command
 docker run ubantu:15.10 /bin/echo "Hello World"
 ```
- - 交互式的容器-i(interaction) -t（terminal)
+交互式的容器-i(interaction) -t（terminal)
 ```
 docker run -i -t ubuntu:15.10 /bin/bash
 ```
- - 后台启动容器-d(detach）
+后台启动容器-d(detach）
 ```
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 docker run -d ubuntu:15.10 /bin/sh -c "while true; do echo hello world; sleep 1; done"
 ```
+进入后台容器
+```
+docker attach [OPTIONS] CONTAINER
+```
+docker info 查看当前系统Docker信息
 docker ps 来查看有哪些容器在运行，以及其他信息
 docker ps -l 查询最后一次创建的容器
 docker restart *Container_ID* 来重启容器
 docker logs *Container_ID* 查看指定容器日志信息
 docker stop *Container_ID* 命令来停止指定容器
-停止所有容器
 docker rm *Container_ID* 删除不需要的容器
 docker inspect *Container_ID* 来查看指定容器的底层信息
 docker top *Container_ID* 来查看容器内部运行的进程

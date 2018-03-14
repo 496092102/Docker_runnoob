@@ -46,7 +46,6 @@ centos/test1                                 helloworld          7888e4154dbc   
 docker rmi [OPTIONS] IMAGE [IMAGE...]
 docker rmi registry.docker-cn.com/library/hello-world
 ```
-```
 docker save命令将镜像存出到本地文件
 ```
 docker save [OPTIONS] IMAGE [IMAGE...]

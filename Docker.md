@@ -136,15 +136,15 @@ docker run -d ubuntu:15.10 /bin/sh -c "while true; do echo hello world; sleep 1;
 ```
 docker attach [OPTIONS] CONTAINER
 ```
-docker info 查看当前系统Docker信息
-docker ps 来查看有哪些容器在运行，以及其他信息
-docker ps -l 查询最后一次创建的容器
-docker restart *Container_ID* 来重启容器
-docker logs *Container_ID* 查看指定容器日志信息
-docker stop *Container_ID* 命令来停止指定容器
-docker rm *Container_ID* 删除不需要的容器
-docker inspect *Container_ID* 来查看指定容器的底层信息
-docker top *Container_ID* 来查看容器内部运行的进程
+ - docker info 查看当前系统Docker信息
+ - docker ps 来查看有哪些容器在运行，以及其他信息
+ - docker ps -l 查询最后一次创建的容器
+ - docker restart *Container_ID* 来重启容器
+ - docker logs *Container_ID* 查看指定容器日志信息
+ - docker stop *Container_ID* 命令来停止指定容器
+ - docker rm *Container_ID* 删除不需要的容器
+ - docker inspect *Container_ID* 来查看指定容器的底层信息
+ - docker top *Container_ID* 来查看容器内部运行的进程
 ### Docker 容器连接
 
 docker port *Container_ID* 5000 命令可以快捷地查看容器的5000端口绑定情况

@@ -39,8 +39,10 @@ busybox latest  f6e427c148a7    11 days ago 1.15MB
 从仓库查找镜像httpd
 `docker search httpd`
 本地镜像与仓库中镜像进行链接
-`docker tag image:tag ip:port/harbor-project-name/image:tag
-docker tag 10.217.248.21/library/nginx:latest 10.217.248.21/test1/nginx:latest`
+```
+docker tag image:tag ip:port/harbor-project-name/image:tag
+docker tag 10.217.248.21/library/nginx:latest 10.217.248.21/test1/nginx:latest
+```
 推送本地镜像至仓库
 `docker push ip:port/harbor-project-name/image:tag
 docker push 10.217.248.21/test1/nginx:latest`

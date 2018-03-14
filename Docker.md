@@ -17,8 +17,10 @@
  - 安装 Docker：
 `yum -y install docker`
  - 启动 Docker 后台服务：
-`systemctl start docker
-systemctl enable docker`
+```
+systemctl start docker
+systemctl enable docker
+```
  - 从镜像源下载Hello-World并测试运行：
 `docker run hello-world`
 ### Docker镜像源
@@ -55,7 +57,7 @@ docker push 10.217.248.21/test1/nginx:latest`
  - docker commit更新镜像
 `docker commit -m="mention" -a="author" Container_ID image:tag`
 #### Dockerfile 文件：
->每一个指令都会在镜像上创建一个新的层，每一个指令的前缀都必须是大写的
+1每一个指令都会在镜像上创建一个新的层，每一个指令的前缀都必须是大写的
 第一条FROM，指定使用哪个镜像源
 RUN 指令告诉docker 在镜像内执行命令，安装了什么
 EXPOSE 指定监听哪个端口

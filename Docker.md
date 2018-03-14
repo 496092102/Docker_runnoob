@@ -12,7 +12,7 @@
  - Docker容器是独立运行的一个或一组应用
  - 根据Docker镜像创建Docker容器
  - Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库
- - C/S 架构，远程API来与 Docker 的守护进程通信，以管理和创建Docker容器
+ - C/S 架构，远程API来与 Docker daemon通信，以管理和创建Docker容器
 ### Docker安装
 
 安装 Docker：
@@ -24,9 +24,13 @@ yum -y install docker
 systemctl start docker
 systemctl enable docker
 ```
-从镜像源下载Hello-World并测试运行：
+查看docker版本
 ```
-docker run hello-world
+docker version
+```
+从registry.docker-cn.com镜像源下载Hello-World并测试运行：
+```
+docker run registry.docker-cn.com/library/hello-world:latest
 ```
 ### Docker镜像源
 #### 本地：
@@ -34,18 +38,35 @@ docker run hello-world
 docker images 列出本地主机上的镜像
 ```
 docker images 
-REPOSITORY  TAG IMAGE ID    CREATED SIZE
-busybox latest  f6e427c148a7    11 days ago 1.15MB
-10.217.248.21/library/nginx latest  e548f1a579cf    2 weeks ago 109MB
+REPOSITORY                                   TAG                 IMAGE ID            CREATED             SIZE
+centos/test1                                 helloworld          7888e4154dbc        3 hours ago         195.7 MB
 ```
 删除本地镜像
 ```
-docker rmi [OPTIONS] IMAGE [IMAGE...] 
+docker rmi [OPTIONS] IMAGE [IMAGE...]
+docker rmi registry.docker-cn.com/library/hello-world
+```
+```
+docker save命令将镜像存出到本地文件
+```
+docker save [OPTIONS] IMAGE [IMAGE...]
+docker save --output /data/testimage.tar testimage:latest
+```
+docker load命令将镜像载入
+```
+docker load [OPTIONS]
+docker load --input testimage.tar
 ```
 #### 仓库：
 1. 本地私有仓库：Harbor
 2. 远程官方仓库：Docker Hub
 
+设置仓库后不需要完整指定路径，具体为修改/etc/docker/daemon.json
+```
+{
+  "registry-mirrors": ["https://registry.docker-cn.com"]
+}
+```
 从仓库查找镜像httpd
 ```
 docker search httpd
@@ -63,20 +84,7 @@ docker push 10.217.248.21/test1/nginx:latest
 从仓库拉取镜像
 ```
 docker pull ip:port/harbor-project-name/image:tag
-```
-设置仓库后不需要完整指定路径，修改/etc/docker/daemon.json
-```
-{
-  "registry-mirrors": ["https://registry.docker-cn.com"]
-}
-```
-docker save命令将镜像存出到本地文件
-```
-docker save –o /data/testimage.tar testimage:latest
-```
-docker loader命令将镜像载入
-```
-docker load —input testimage.tar
+docker pull 10.217.248.21/test1/nginx:latest
 ```
 ### Docker镜像制作
 

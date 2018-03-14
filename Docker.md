@@ -14,6 +14,7 @@
  - Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库
  - C/S 架构，远程API来与 Docker 的守护进程通信，以管理和创建Docker容器
 ### Docker安装
+
 安装 Docker：
 ```
 yum -y install docker
@@ -29,6 +30,7 @@ docker run hello-world
 ```
 ### Docker镜像源
 #### 本地：
+
 docker images 列出本地主机上的镜像
 ```
 docker images 
@@ -43,6 +45,7 @@ docker rmi [OPTIONS] IMAGE [IMAGE...]
 #### 仓库：
 1. 本地私有仓库：Harbor
 2. 远程官方仓库：Docker Hub
+
 从仓库查找镜像httpd
 ```
 docker search httpd
@@ -76,6 +79,7 @@ docker loader命令将镜像载入
 docker load —input testimage.tar
 ```
 ### Docker镜像制作
+
 docker commit更新镜像
 ```
 docker commit -m="mention" -a="author" Container_ID image:tag
@@ -85,6 +89,7 @@ Dockerfile 文件：
  - 第一条FROM，指定使用哪个镜像源
  - RUN 指令告诉docker 在镜像内执行命令，安装了什么
  - EXPOSE 指定监听哪个端口
+
 docker build构建镜像
 ```
 docker build -t(tag) runoob/centos:6.7 .

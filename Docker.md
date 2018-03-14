@@ -28,7 +28,7 @@ systemctl enable docker
 docker run hello-world
 ```
 ### Docker镜像源
-本地：
+#### 本地：
 docker images 列出本地主机上的镜像
 ```
 docker images 
@@ -40,9 +40,9 @@ busybox latest  f6e427c148a7    11 days ago 1.15MB
 ```
 docker rmi [OPTIONS] IMAGE [IMAGE...] 
 ```
-仓库：
-本地私有仓库：Harbor
-远程官方仓库：Docker Hub
+#### 仓库：
+1. 本地私有仓库：Harbor
+2. 远程官方仓库：Docker Hub
 从仓库查找镜像httpd
 ```
 docker search httpd

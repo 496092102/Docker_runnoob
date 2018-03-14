@@ -1,22 +1,21 @@
-Docker教程
-
+#Docker教程
 --------
-##Docker
-###简介：
+## Docker
+### 简介：
  - 基于Go 语言
  - 沙箱机制
  - 应用容器引擎
  - Apache2.0协议开源
-###用途：
+### 用途：
  - 打包应用以及依赖包到一个轻量的、可移植的容器当中，以发布到任何机器上
- - 实现虚拟化 
+ - 实现虚拟化
 ---------
-##Docker使用
+## Docker使用
  - Docker容器是独立运行的一个或一组应用
  - 根据Docker镜像创建Docker容器
  - Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库
  - C/S 架构，远程API来与 Docker 的守护进程通信，以管理和创建Docker容器
-###Docker安装
+### Docker安装
 安装 Docker：
 `yum -y install docker`
 启动 Docker 后台服务：
@@ -24,7 +23,7 @@ Docker教程
 systemctl enable docker`
 从镜像源下载Hello-World并测试运行：
 `docker run hello-world`
-###Docker镜像源
+### Docker镜像源
 本地：
 docker images 列出本地主机上的镜像
 `docker images 
@@ -39,10 +38,8 @@ busybox latest  f6e427c148a7    11 days ago 1.15MB
 从仓库查找镜像httpd
 `docker search httpd`
 本地镜像与仓库中镜像进行链接
-```
-docker tag image:tag ip:port/harbor-project-name/image:tag
-docker tag 10.217.248.21/library/nginx:latest 10.217.248.21/test1/nginx:latest
-```
+`docker tag image:tag ip:port/harbor-project-name/image:tag
+docker tag 10.217.248.21/library/nginx:latest 10.217.248.21/test1/nginx:latest`
 推送本地镜像至仓库
 `docker push ip:port/harbor-project-name/image:tag
 docker push 10.217.248.21/test1/nginx:latest`
@@ -56,7 +53,7 @@ docker save命令将镜像存出到本地文件
 `docker save –o /data/testimage.tar testimage:latest`
 docker loader命令将镜像载入
 `docker load —input testimage.tar`
-###Docker镜像制作
+### Docker镜像制作
 docker commit更新镜像
 `docker commit -m="mention" -a="author" Container_ID image:tag`
 Dockerfile 文件：
@@ -80,7 +77,7 @@ EXPOSE  80
 CMD     /usr/sbin/sshd -D
 
 
-###Docker容器使用
+### Docker容器使用
  - docker run 命令来在容器内运行一个应用程序
 `docker run *image:tag* *command*
 docker run ubantu:15.10 /bin/echo "Hello World"`
@@ -97,7 +94,7 @@ docker run ubantu:15.10 /bin/echo "Hello World"`
  - docker rm *Container_ID* 删除不需要的容器
  - docker inspect *Container_ID* 来查看指定容器的底层信息
  - docker top *Container_ID* 来查看容器内部运行的进程
-###Docker 容器连接
+### Docker 容器连接
 docker port *Container_ID* 5000 命令可以快捷地查看容器的5000端口绑定情况
 docker run中使用端口映射
 	-P :是容器内部端口随机映射到主机的高端口
@@ -110,13 +107,13 @@ docker run中使用端口映射
 6779686f06f6204579c1d655dd8b2b31e8e809b245a97b2d3a8e35abe9dcd22a`
 
 ---------
-##Docker实例
-###Docker安装Nginx
-####创建Dockerfile
+## Docker实例
+### Docker安装Nginx
+### #创建Dockerfile
 
  1. 创建Dockerfile
  2. 通过Dockerfile创建一个镜像
 
-####使用nginx镜像
-###Docker安装Python
-###Docker安装MySQL
+### #使用nginx镜像
+### Docker安装Python
+### Docker安装MySQL

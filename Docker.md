@@ -97,15 +97,6 @@ Dockerfile 文件：
  - RUN 指令告诉docker 在镜像内执行命令，安装了什么
  - EXPOSE 指定监听哪个端口
 
-docker build构建镜像
-```
-docker build -t(tag) image:tag $DOCKFILE_DIR
-```
-docker tag 命令，为镜像添加一个新的标签
-```
-docker tag IMAGE_ID image:tag
-```
-Dockerfile
 ```
 cat Dockerfile
 FROM    centos:6.7
@@ -116,6 +107,15 @@ RUN     /bin/echo 'test1:123456' |chpasswd
 RUN     /bin/echo -e "LANG=\"en_US.UTF-8\"" >/etc/default/local
 CMD     /bin/bash -c "while true; do echo hello world; sleep 3; done"
 ```
+docker build构建镜像
+```
+docker build -t(tag) image:tag $DOCKFILE_DIR
+```
+docker tag 命令，为镜像添加一个新的标签
+```
+docker tag IMAGE_ID image:tag
+```
+
 ### Docker容器使用
 
 docker run 命令来在容器内运行一个应用程序

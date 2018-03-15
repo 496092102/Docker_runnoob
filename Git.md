@@ -5,22 +5,22 @@
  - 设立交换中心跟踪并管理的修改
 ## 安装配置Git
 ```
-[root@localhost ~]#yum install git.x86_64
-[git@localhost ~]\$ git config --global user.name "name"
-[git@localhost ~]\$ git config --global user.email "email"
+yum install git.x86_64
+git config --global user.name "name"
+git config --global user.email "email"
 ```
 ## repository
 ### 创建本地repository
 
 1、创建一个空目录
 ```
-[git@localhost ~]\$ mkdir learngit
-[git@localhost learngit]\$ pwd
+mkdir learngit
+pwd
 /home/git/learngit
 ```
 2、通过git init命令把这个目录变成Git可以管理的仓库目录
 ```
-[git@localhost learngit]\$ git init
+git init
 Initialized empty Git repository in /home/git/learngit/.git/
 ```
 ### 工作区、暂存区

@@ -88,3 +88,19 @@ git push origin master
 ## 分支管理
 
 创建了一个属于你自己的分支，别人看不到，还继续在原来的分支上正常工作，而你在自己的分支上干活，想提交就提交，直到开发完毕后，再一次性合并到原来的分支上，这样，既安全，又不影响别人工作
+
+查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>
+
+创建+切换分支：git checkout -b <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+
+查看分支合并图：git log --graph --pretty=oneline --abbrev-commit
+
+禁用ff合并git merge --no-ff -m "description" <branchname>

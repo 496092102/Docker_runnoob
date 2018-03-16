@@ -117,3 +117,20 @@ git push origin master
 
 删除工作现场 git stash drop
 
+## 标签
+
+tag和某个commit绑在一起
+
+新建标签 git tag -a <tagname> -m <description> <branchname> or commit_id
+
+新建PGP签名标签 git tag -s <tagname> -m <description> <branchname> or commit_id
+
+查看所有标签 git tag
+
+推送一个本地标签 git push origin <tagname>
+
+推送全部未推送过的本地标签 git push origin --tags
+
+删除一个本地标签 git tag -d <tagname>
+
+删除一个远程标签 git push origin :refs/tags/<tagname>

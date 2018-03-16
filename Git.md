@@ -104,3 +104,16 @@ git push origin master
 查看分支合并图：git log --graph --pretty=oneline --abbrev-commit
 
 禁用ff合并git merge --no-ff -m "description" <branchname>
+
+## 工作现场
+
+保存工作现场 git stash
+
+查看工作现场列表 git stash list
+
+恢复工作现场 git stash apply
+
+恢复指定的工作现场 git stash apply <stash version>
+
+删除工作现场 git stash drop
+

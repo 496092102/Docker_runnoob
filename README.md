@@ -6,4 +6,4 @@ include:
  - git
  - Docker
  - python
- - python100
+ - python100 http://www.runoob.com/python/python-100-examples.html

@@ -1,5 +1,3 @@
-
-
 # Single line comments start with a number symbol.
 
 """ Multiline strings can be written
@@ -20,7 +18,7 @@
 10 * 2  # => 20
 35 / 5  # => 7.0
 
-# Result of integer division truncated down both for positive and negative.
+# Result of integer division truncated down both for positive and negative.取整除 - 返回商的整数部分
 5 // 3       # => 1
 5.0 // 3.0   # => 1.0 # works on floats too
 -5 // 3      # => -2
@@ -29,10 +27,10 @@
 # The result of division is always a float
 10.0 / 3  # => 3.3333333333333335
 
-# Modulo operation
+# Modulo operation取模 - 返回除法的余数
 7 % 3  # => 1
 
-# Exponentiation (x**y, x to the yth power)
+# Exponentiation/,ekspənenʃɪ'eɪʃ(ə)n/ (x**y, x to the yth power)
 2**3  # => 8
 
 # Enforce precedence with parentheses

@@ -3,7 +3,11 @@
 import math
 
 def su(n):
-    for i in range(2,math.sqrt(n)):
+    m = int(math.sqrt(n))
+    for i in range(2,m):
         if n % i == 0:
             break
         return n
+
+for i in range(101,200):
+    print(su(i))
